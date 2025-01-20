@@ -54,14 +54,15 @@ export class StudentTableComponent implements OnInit {
   search(value) {
     let foundItems = [];
     if (value.length <= 0) {
-      this.getStudentData();
+      this.getStudentData();  // Fetch all student data if search input is empty
     } else {
-      let b = this.studentData.filter((student) => {
-        if (student[0].name.toLowerCase().indexOf(value) > -1) {
-          foundItems.push(student)
+      let b = this.teacherData.filter((student) => {
+        // Check if student's name includes the search value (case-insensitive)
+        if (student.name.toLowerCase().indexOf(value.toLowerCase()) > -1) {
+          foundItems.push(student);  // Add matching students to the foundItems array
         }
       });
-      this.studentData = foundItems;
+      this.teacherData = foundItems;  // Update studentData with the filtered results
     }
   }
 }
