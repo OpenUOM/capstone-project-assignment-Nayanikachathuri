@@ -1,8 +1,6 @@
 name: GitHub Classroom Workflow
 
-on:
-  - push
-  - workflow_dispatch
+on: [push]
 
 permissions:
   checks: write
@@ -12,11 +10,7 @@ permissions:
 jobs:
   build:
     name: Autograding
-    runs-on: ubuntu-24.04
-    if: github.actor != 'github-classroom[bot]'
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v3
-        with: 
-          node-version: 16
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
       - uses: education/autograding@v1

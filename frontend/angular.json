@@ -106,9 +106,16 @@
           }
         },
         "lint": {
-          "builder": "@angular-eslint/builder:lint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "lintFilePatterns": ["src/**/*.ts"]
+            "tsConfig": [
+              "tsconfig.app.json",
+              "tsconfig.spec.json",
+              "e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         },
         "e2e": {
@@ -124,10 +131,6 @@
           }
         }
       }
-    }
-  },
-  "defaultProject": "capstone-frontend",
-  "cli": {
-    "analytics": false
-  }
+    }},
+  "defaultProject": "capstone-frontend"
 }
