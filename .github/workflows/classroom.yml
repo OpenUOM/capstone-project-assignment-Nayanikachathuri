@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-24.04
     if: github.actor != 'github-classroom[bot]'
     steps:
+    - name: Setup code
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
     - name: Checkout code
       uses: actions/checkout@v4
     - name: Backend List Teachers
