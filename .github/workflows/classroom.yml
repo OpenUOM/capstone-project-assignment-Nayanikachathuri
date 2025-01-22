@@ -21,6 +21,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - uses: classroom-resources/autograding-command-grader@v1
+        id: backend-list-teachers
         with:
           test-name: Backend List Teachers
           setup-command: npm install
@@ -29,6 +30,7 @@ jobs:
           max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
+        id: backend-add-teacher
         with:
           test-name: Backend Add Teacher
           setup-command: npm install
@@ -37,6 +39,7 @@ jobs:
           max-score: 10
     
       - uses: classroom-resources/autograding-command-grader@v1
+        id: backend-edit-teacher
         with:
           test-name: Backend Edit Teacher
           setup-command: npm install
@@ -45,6 +48,7 @@ jobs:
           max-score: 10
      
       - uses: classroom-resources/autograding-command-grader@v1
+        id: backend-delete-teacher
         with:
           test-name: Backend Delete Teacher
           setup-command: npm install
@@ -53,6 +57,7 @@ jobs:
           max-score: 10
      
       - uses: classroom-resources/autograding-command-grader@v1
+        id: backend-list-students
         with:
           test-name: Backend List Students
           setup-command: npm install
@@ -61,6 +66,7 @@ jobs:
           max-score: 10
      
       - uses: classroom-resources/autograding-command-grader@v1
+        id: backend-add-student
         with:
           test-name: Backend Add Student
           setup-command: npm install
@@ -69,6 +75,7 @@ jobs:
           max-score: 10
      
       - uses: classroom-resources/autograding-command-grader@v1
+        id: backend-edit-student
         with:
           test-name: Backend Edit Student
           setup-command: npm install
@@ -77,6 +84,7 @@ jobs:
           max-score: 10
     
       - uses: classroom-resources/autograding-command-grader@v1
+        id: backend-delete-student
         with:
           test-name: Backend Delete Student
           setup-command: npm install
@@ -85,6 +93,7 @@ jobs:
           max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
+        id: dummy-test
         with:
           test-name: Dummy Test
           setup-command: npm install
@@ -92,6 +101,7 @@ jobs:
           timeout: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
+        id: frontend-add-student
         with:
           test-name: Frontend Add Student
           setup-command: npm install
@@ -100,6 +110,7 @@ jobs:
           max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
+        id: frontend-delete-student
         with:
           test-name: Frontend Delete Student
           setup-command: npm install
@@ -108,6 +119,7 @@ jobs:
           max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
+        id: frontend-edit-student
         with:
           test-name: Frontend Edit Student
           setup-command: npm install
@@ -116,6 +128,7 @@ jobs:
           max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
+        id: frontend-search-student
         with:
           test-name: Frontend Search Student
           setup-command: npm install
@@ -124,6 +137,7 @@ jobs:
           max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
+        id: frontend-add-teacher
         with:
           test-name: Frontend Add Teacher
           setup-command: npm install
@@ -132,6 +146,7 @@ jobs:
           max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
+        id: frontend-delete-teacher
         with:
           test-name: Frontend Delete Teacher
           setup-command: npm install
@@ -140,6 +155,7 @@ jobs:
           max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
+        id: frontend-edit-teacher
         with:
           test-name: Frontend Edit Teacher
           setup-command: npm install
@@ -148,6 +164,7 @@ jobs:
           max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
+        id: frontend-search-teacher
         with:
           test-name: Frontend Search Teacher
           setup-command: npm install
@@ -157,22 +174,22 @@ jobs:
 
       - uses: classroom-resources/autograding-grading-reporter@v1
         env:
-          BACKEND-LIST-TEACHERS_RESULTS: "${{steps.backend-list-teachers.outputs.result}}"
-          BACKEND-ADD-TEACHER_RESULTS: "${{steps.backend-add-teacher.outputs.result}}"
-          BACKEND-EDIT-TEACHER_RESULTS: "${{steps.backend-edit-teacher.outputs.result}}"
-          BACKEND-DELETE-TEACHER_RESULTS: "${{steps.backend-delete-teacher.outputs.result}}"
-          BACKEND-LIST-STUDENTS_RESULTS: "${{steps.backend-list-students.outputs.result}}"
-          BACKEND-ADD-STUDENT_RESULTS: "${{steps.backend-add-student.outputs.result}}"
-          BACKEND-EDIT-STUDENT_RESULTS: "${{steps.backend-edit-student.outputs.result}}"
-          BACKEND-DELETE-STUDENT_RESULTS: "${{steps.backend-delete-student.outputs.result}}"
-          DUMMY-TEST_RESULTS: "${{steps.dummy-test.outputs.result}}"
-          FRONTEND-ADD-STUDENT_RESULTS: "${{steps.frontend-add-student.outputs.result}}"
-          FRONTEND-DELETE-STUDENT_RESULTS: "${{steps.frontend-delete-student.outputs.result}}"
-          FRONTEND-EDIT-STUDENT_RESULTS: "${{steps.frontend-edit-student.outputs.result}}"
-          FRONTEND-SEARCH-STUDENT_RESULTS: "${{steps.frontend-search-student.outputs.result}}"
-          FRONTEND-ADD-TEACHER_RESULTS: "${{steps.frontend-add-teacher.outputs.result}}"
-          FRONTEND-DELETE-TEACHER_RESULTS: "${{steps.frontend-delete-teacher.outputs.result}}"
-          FRONTEND-EDIT-TEACHER_RESULTS: "${{steps.frontend-edit-teacher.outputs.result}}"
-          FRONTEND-SEARCH-TEACHER_RESULTS: "${{steps.frontend-search-teacher.outputs.result}}"
+          BACKEND-LIST-TEACHERS_RESULTS: "${{ steps.backend-list-teachers.outputs.result }}"
+          BACKEND-ADD-TEACHER_RESULTS: "${{ steps.backend-add-teacher.outputs.result }}"
+          BACKEND-EDIT-TEACHER_RESULTS: "${{ steps.backend-edit-teacher.outputs.result }}"
+          BACKEND-DELETE-TEACHER_RESULTS: "${{ steps.backend-delete-teacher.outputs.result }}"
+          BACKEND-LIST-STUDENTS_RESULTS: "${{ steps.backend-list-students.outputs.result }}"
+          BACKEND-ADD-STUDENT_RESULTS: "${{ steps.backend-add-student.outputs.result }}"
+          BACKEND-EDIT-STUDENT_RESULTS: "${{ steps.backend-edit-student.outputs.result }}"
+          BACKEND-DELETE-STUDENT_RESULTS: "${{ steps.backend-delete-student.outputs.result }}"
+          DUMMY-TEST_RESULTS: "${{ steps.dummy-test.outputs.result }}"
+          FRONTEND-ADD-STUDENT_RESULTS: "${{ steps.frontend-add-student.outputs.result }}"
+          FRONTEND-DELETE-STUDENT_RESULTS: "${{ steps.frontend-delete-student.outputs.result }}"
+          FRONTEND-EDIT-STUDENT_RESULTS: "${{ steps.frontend-edit-student.outputs.result }}"
+          FRONTEND-SEARCH-STUDENT_RESULTS: "${{ steps.frontend-search-student.outputs.result }}"
+          FRONTEND-ADD-TEACHER_RESULTS: "${{ steps.frontend-add-teacher.outputs.result }}"
+          FRONTEND-DELETE-TEACHER_RESULTS: "${{ steps.frontend-delete-teacher.outputs.result }}"
+          FRONTEND-EDIT-TEACHER_RESULTS: "${{ steps.frontend-edit-teacher.outputs.result }}"
+          FRONTEND-SEARCH-TEACHER_RESULTS: "${{ steps.frontend-search-teacher.outputs.result }}"
         with:
-          runners: "backend-list-teachers,backend-add-teacher,backend-edit-teacher,backend-delete-teacher,backend-list-students,backend-add-student,backend-edit-student,backend-delete-student,dummy-test,frontend-add-student,frontend-delete-student,frontend-edit-student,frontend-search-student,frontend-add-teacher,frontend-delete-teacher,frontend-edit-teacher,frontend-search-teacher"
+          runners: "backend-list-teachers, backend-add-teacher, backend-edit-teacher, backend-delete-teacher, backend-list-students, backend-add-student, backend-edit-student, backend-delete-student, dummy-test, frontend-add-student, frontend-delete-student, frontend-edit-student, frontend-search-student, frontend-add-teacher, frontend-delete-teacher, frontend-edit-teacher, frontend-search-teacher"
