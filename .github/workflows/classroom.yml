@@ -19,140 +19,142 @@ jobs:
         with:
           node-version: 16
       - uses: actions/checkout@v4
-      - uses: classroom-resources/autograding-command-grader@v1
-        with:
-         test-name: Backend List Teachers
-         setup-command: npm install
-         command: npm test -- -t "GET /listTeachers should show all teachers"
-         timeout: 10
-         max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
         with:
-         test-name: Backend Add Teacher
-         setup-command: npm install
-         command: npm test -- -t "POST /addTeacher should show a newly added teacher"
-         timeout: 10
-         max-score: 10
+          test-name: Backend List Teachers
+          setup-command: npm install
+          command: npm test -- -t "GET /listTeachers should show all teachers"
+          timeout: 10
+          max-score: 10
+
+      - uses: classroom-resources/autograding-command-grader@v1
+        with:
+          test-name: Backend Add Teacher
+          setup-command: npm install
+          command: npm test -- -t "POST /addTeacher should show a newly added teacher"
+          timeout: 10
+          max-score: 10
     
       - uses: classroom-resources/autograding-command-grader@v1
         with:
-         test-name: Backend Edit Teacher
-         setup-command: npm install
-         command: npm test -- -t "POST /editTeacher should show a newly added teacher"
-         timeout: 10
-         max-score: 10
-   
+          test-name: Backend Edit Teacher
+          setup-command: npm install
+          command: npm test -- -t "POST /editTeacher should show a newly added teacher"
+          timeout: 10
+          max-score: 10
+     
       - uses: classroom-resources/autograding-command-grader@v1
         with:
-         test-name: Backend Delete Teacher
-         setup-command: npm install
-         command: npm test -- -t "POST /deleteTeacher should delete a teacher"
-         timeout: 10
-         max-score: 10
-   
+          test-name: Backend Delete Teacher
+          setup-command: npm install
+          command: npm test -- -t "POST /deleteTeacher should delete a teacher"
+          timeout: 10
+          max-score: 10
+     
       - uses: classroom-resources/autograding-command-grader@v1
         with:
-         test-name: Backend List Students
-         setup-command: npm install
-         command: npm test -- -t "GET /listStudents should show all students"
-         timeout: 10
-         max-score: 10
-   
+          test-name: Backend List Students
+          setup-command: npm install
+          command: npm test -- -t "GET /listStudents should show all students"
+          timeout: 10
+          max-score: 10
+     
       - uses: classroom-resources/autograding-command-grader@v1
         with:
-         test-name: Backend Add Student
-         setup-command: npm install
-         command: npm test -- -t "POST /addStudent should show a newly added student"
-         timeout: 10
-         max-score: 10
-   
+          test-name: Backend Add Student
+          setup-command: npm install
+          command: npm test -- -t "POST /addStudent should show a newly added student"
+          timeout: 10
+          max-score: 10
+     
       - uses: classroom-resources/autograding-command-grader@v1
         with:
-         test-name: Backend Edit Student
-         setup-command: npm install
-         command: npm test -- -t "POST /editStudent should edit a Student"
-         timeout: 10
-         max-score: 10
+          test-name: Backend Edit Student
+          setup-command: npm install
+          command: npm test -- -t "POST /editStudent should edit a Student"
+          timeout: 10
+          max-score: 10
     
       - uses: classroom-resources/autograding-command-grader@v1
         with:
-         test-name: Backend Delete Student
-         setup-command: npm install
-         command: npm test -- -t "POST /deleteStudent should delete a student"
-         timeout: 10
-         max-score: 10
+          test-name: Backend Delete Student
+          setup-command: npm install
+          command: npm test -- -t "POST /deleteStudent should delete a student"
+          timeout: 10
+          max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
         with:
-         test-name: Dummy Test
-         setup-command: npm install
-         command: file=./test/dummy.test.js npm run test --prefix ./frontend
-         timeout: 10
+          test-name: Dummy Test
+          setup-command: npm install
+          command: file=./test/dummy.test.js npm run test --prefix ./frontend
+          timeout: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
         with:
-         test-name: Frontend Add Student
-         setup-command: npm install
-         command: file=./test/student-add.test.js npm run test --prefix ./frontend
-         timeout: 10
-         max-score: 10
+          test-name: Frontend Add Student
+          setup-command: npm install
+          command: file=./test/student-add.test.js npm run test --prefix ./frontend
+          timeout: 10
+          max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
         with:
-         test-name: Frontend Delete Student
-         setup-command: npm install
-         command: file=./test/student-delete.test.js npm run test --prefix ./frontend
-         timeout: 10
-         max-score: 10
+          test-name: Frontend Delete Student
+          setup-command: npm install
+          command: file=./test/student-delete.test.js npm run test --prefix ./frontend
+          timeout: 10
+          max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
         with:
-         test-name: Frontend Edit Student
-         setup-command: npm install
-         command: file=./test/student-edit.test.js npm run test --prefix ./frontend
-         timeout: 10
-         max-score: 10
+          test-name: Frontend Edit Student
+          setup-command: npm install
+          command: file=./test/student-edit.test.js npm run test --prefix ./frontend
+          timeout: 10
+          max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
         with:
-         test-name: Frontend Search Student
-         setup-command: npm install
-         command: file=./test/student-search.test.js npm run test --prefix ./frontend
-         timeout: 10
-         max-score: 10
+          test-name: Frontend Search Student
+          setup-command: npm install
+          command: file=./test/student-search.test.js npm run test --prefix ./frontend
+          timeout: 10
+          max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
         with:
-         test-name: Frontend Add Teacher
-         setup-command: npm install
-         command: file=./test/teacher-add.test.js npm run test --prefix ./frontend
-         timeout: 10
-         max-score: 10
+          test-name: Frontend Add Teacher
+          setup-command: npm install
+          command: file=./test/teacher-add.test.js npm run test --prefix ./frontend
+          timeout: 10
+          max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
         with:
-         test-name: Frontend Delete Teacher
-         setup-command: npm install
-         command: file=./test/teacher-delete.test.js npm run test --prefix ./frontend
-         timeout: 10
-         max-score: 10
+          test-name: Frontend Delete Teacher
+          setup-command: npm install
+          command: file=./test/teacher-delete.test.js npm run test --prefix ./frontend
+          timeout: 10
+          max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
         with:
-         test-name: Frontend Edit Teacher
-         setup-command: npm install
-         command: file=./test/teacher-edit.test.js npm run test --prefix ./frontend
-         timeout: 10
-         max-score: 10
+          test-name: Frontend Edit Teacher
+          setup-command: npm install
+          command: file=./test/teacher-edit.test.js npm run test --prefix ./frontend
+          timeout: 10
+          max-score: 10
 
       - uses: classroom-resources/autograding-command-grader@v1
         with:
-         test-name: Frontend Search Teacher
-         setup-command: npm install
-         command: file=./test/teacher-search.test.js npm run test --prefix ./frontend
-         timeout: 10
-         max-score: 10
+          test-name: Frontend Search Teacher
+          setup-command: npm install
+          command: file=./test/teacher-search.test.js npm run test --prefix ./frontend
+          timeout: 10
+          max-score: 10
+
       - uses: classroom-resources/autograding-grading-reporter@v1
         env:
           BACKEND-LIST-TEACHERS_RESULTS: "${{steps.backend-list-teachers.outputs.result}}"
@@ -173,4 +175,4 @@ jobs:
           FRONTEND-EDIT-TEACHER_RESULTS: "${{steps.frontend-edit-teacher.outputs.result}}"
           FRONTEND-SEARCH-TEACHER_RESULTS: "${{steps.frontend-search-teacher.outputs.result}}"
         with:
-         runners: backend-list-teachers,backend-add-teacher,backend-edit-teacher,backend-delete-teacher,backend-list-students,backend-add-student,backend-edit-student,backend-delete-student,dummy-test,frontend-add-student,frontend-delete-student,frontend-edit-student,frontend-search-student,frontend-add-teacher,frontend-delete-teacher,frontend-edit-teacher,frontend-search-teacher
+          runners: "backend-list-teachers,backend-add-teacher,backend-edit-teacher,backend-delete-teacher,backend-list-students,backend-add-student,backend-edit-student,backend-delete-student,dummy-test,frontend-add-student,frontend-delete-student,frontend-edit-student,frontend-search-student,frontend-add-teacher,frontend-delete-teacher,frontend-edit-teacher,frontend-search-teacher"
