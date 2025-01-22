@@ -1,11 +1,5 @@
 name: GitHub Classroom Workflow
-<<<<<<< HEAD
-
 on: [push]
-
-=======
-on: [push]
->>>>>>> 23af0359338b0ae80293aa0549832799f79ea458
 permissions:
   checks: write
   actions: read
@@ -13,14 +7,7 @@ permissions:
 jobs:
   build:
     name: Autograding
-<<<<<<< HEAD
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: education/autograding@v1
-=======
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v2
       - uses: education/autograding@v1
->>>>>>> 23af0359338b0ae80293aa0549832799f79ea458
