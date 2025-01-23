@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router,NavigationExtras } from '@angular/router';
 import { faTrash, faPlus, faPenSquare } from '@fortawesome/free-solid-svg-icons';
 import {AppServiceService} from '../../app-service.service';
+
 @Component({
   selector: 'app-student-table',
   templateUrl: './student-table.component.html',
   styleUrls: ['./student-table.component.css']
 })
 export class StudentTableComponent implements OnInit {
+
 
   faTrash = faTrash;
   faPlus = faPlus;
@@ -33,10 +35,9 @@ export class StudentTableComponent implements OnInit {
     };
     this.router.navigate(['editStudent'], navigationExtras )
   }
-
   getStudentData(){
     this.service.getStudentData().subscribe((response)=>{
-      this.studentData = Object.keys(response).map((key) => [response[key]]);
+      this.studentData = response;
     },(error)=>{
       console.log('ERROR - ', error)
     })
@@ -49,20 +50,5 @@ export class StudentTableComponent implements OnInit {
     this.service.deleteStudent(student).subscribe((response)=>{
       this.getStudentData()
     })
-  }
-
-  search(value) {
-    let foundItems = [];
-    if (value.length <= 0) {
-      this.getStudentData();  // Fetch all student data if search input is empty
-    } else {
-      let b = this.teacherData.filter((student) => {
-        // Check if student's name includes the search value (case-insensitive)
-        if (student.name.toLowerCase().indexOf(value.toLowerCase()) > -1) {
-          foundItems.push(student);  // Add matching students to the foundItems array
-        }
-      });
-      this.teacherData = foundItems;  // Update studentData with the filtered results
-    }
   }
 }
