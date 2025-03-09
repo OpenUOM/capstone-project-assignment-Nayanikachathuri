@@ -56,7 +56,7 @@ const addTeacher = async (id, name, age) => {
         knex_db
             .raw(sql, [id, name, age])
             .then(() => {
-                resolve({status: "Successfully inserted Teacher"});
+                resolve({status: "Successfully inserted Teacher"})
             })
             .catch((error) => {
                 reject(error);
